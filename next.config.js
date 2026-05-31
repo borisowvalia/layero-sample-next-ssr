@@ -1,3 +1,4 @@
 /** @type {import('next').NextConfig} */
-// No `output: 'export'` → real SSR server (should route to ssr_next runtime).
-module.exports = { reactStrictMode: true };
+// `output: 'standalone'` is required by Layero's Next SSR runtime image
+// (it COPYs .next/standalone). No `output: 'export'` → real SSR.
+module.exports = { reactStrictMode: true, output: "standalone" };
